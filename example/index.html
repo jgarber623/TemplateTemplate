@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <table id="projects-table">
+  <table id="projects">
     <caption>A table of open source projects.</caption>
     <thead>
       <tr>
@@ -20,55 +20,48 @@
     <tbody></tbody>
   </table>
 
+  <template id="row-template">
+    <tr>
+      <th class="name" scope="row"></th>
+      <td class="author"></td>
+      <td class="url"></td>
+      <td class="languages"></td>
+    </tr>
+  </template>
+
   <template id="anchor-template">
     <a></a>
   </template>
 
-  <template id="project-template">
-    <tr>
-      <th class="project-name" scope="row"></th>
-      <td class="project-author"></td>
-      <td class="project-url"></td>
-      <td class="project-languages"></td>
-    </tr>
-  </template>
-
   <script src="../src/templatetemplate.js"></script>
   <script>
-    var tbody = document.querySelector('#projects-table tbody'),
-        anchor = document.createElement('a');
+    var tbody = document.querySelector('#projects tbody');
+
+    tbody.appendChild(
+      TemplateTemplate(document.querySelector('#row-template'), {
+        '.name': 'TemplateTemplate',
+        '.author': 'Jason Garber',
+        '.url': 'https://github.com/jgarber623/TemplateTemplate',
+        '.languages': 'JavaScript'
+      })
+    );
+
+    var anchor = document.createElement('a');
 
     anchor.setAttribute('href', 'https://sixtwothree.org');
-    anchor.textContent = 'Jason Garber'
+    anchor.textContent = 'Jason Garber';
 
     tbody.appendChild(
-      TemplateTemplate(document.querySelector('#project-template'), {
-        '.project-name': 'TemplateTemplate',
-        '.project-author': 'Jason Garber',
-        '.project-url': 'https://github.com/jgarber623/TemplateTemplate',
-        '.project-languages': 'JavaScript'
-      })
-    );
-
-    tbody.appendChild(
-      TemplateTemplate('#project-template', {
-        'th': 'RadioRadio',
-        '.project-author': anchor,
-        'td:nth-child(3)': 'https://github.com/jgarber623/RadioRadio',
-        'td:last-child': 'JavaScript'
-      })
-    );
-
-    tbody.appendChild(
-      TemplateTemplate('#project-template', {
+      TemplateTemplate('#row-template', {
         'th': 'CashCash',
-        '.project-author': 'Jason Garber',
-        '.project-url': ['github.com/jgarber623/CashCash', {
+        'th + td': anchor,
+        '.url': ['github.com/jgarber623/CashCash', {
           'style': 'font-weight: bold;'
         }],
         'td:last-child': TemplateTemplate('#anchor-template', {
           'a': ['JavaScript', {
-            'href': 'https://github.com/search?q=language%3AJavaScript'
+            'href': 'https://github.com/search?q=language%3AJavaScript',
+            'target': '_blank'
           }]
         })
       })
