@@ -16,15 +16,15 @@ TemplateTemplate is also really tiny:
   <tbody>
     <tr>
       <th>Uncompressed</th>
-      <td>1,252 bytes</td>
+      <td>1,529 bytes</td>
     </tr>
     <tr>
       <th>Minified</th>
-      <td>767 bytes</td>
+      <td>878 bytes</td>
     </tr>
     <tr>
       <th>Minified and gzipped</th>
-      <td>446 bytes</td>
+      <td>493 bytes</td>
     </tr>
   </tbody>
 </table>
