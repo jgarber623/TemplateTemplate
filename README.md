@@ -2,8 +2,8 @@
 
 **A very small JavaScript `<template>` manipulation library.**
 
-[![npm](https://img.shields.io/npm/v/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/templatetemplate)
-[![Downloads](https://img.shields.io/npm/dt/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/templatetemplate)
+[![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
+[![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 
 ## Acknowledgments
 
