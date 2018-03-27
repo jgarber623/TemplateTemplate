@@ -5,6 +5,10 @@
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 
+## Usage
+
+See [![Examples](https://github.com/jgarber623/TemplateTemplate/tree/master/example)]
+
 ## Acknowledgments
 
 TemplateTemplate is written and maintained by [Jason Garber](https://sixtwothree.org/) and is another in a growing collection of small, curiously-named JavaScript utilities:
