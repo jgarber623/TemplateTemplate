@@ -35,7 +35,7 @@ You've got a couple options for adding TemplateTemplate to your project:
 
 - [Download a tagged version](https://github.com/jgarber623/TemplateTemplate/tags) from GitHub and do it yourself (old school).
 - Install using [npm](https://www.npmjs.com/package/@jgarber/templatetemplate): `npm install @jgarber/templatetemplate`
-- Install using [Yarn](https://yarnpkg.com/en/package/routerrouter): `yarn add @jgarber/templatetemplate`
+- Install using [Yarn](https://yarnpkg.com/en/package/@jgarber/templatetemplate): `yarn add @jgarber/templatetemplate`
 
 ## Usage
 
