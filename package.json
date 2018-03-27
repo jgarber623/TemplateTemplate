@@ -1,5 +1,5 @@
 {
-  "name": "templatetemplate",
+  "name": "@jgarber/templatetemplate",
   "version": "0.1.0",
   "description": "A very small JavaScript <template> manipulation library.",
   "main": "dist/templatetemplate.js",
