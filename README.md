@@ -4,6 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
+[![Build](https://img.shields.io/travis/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://travis-ci.org/jgarber623/TemplateTemplate)
 
 ### Key Features
 
