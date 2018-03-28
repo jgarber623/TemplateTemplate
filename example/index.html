@@ -4,6 +4,61 @@
   <meta charset="utf-8">
 
   <title>TemplateTemplate: Examples</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      color: #333;
+      font-family: sans-serif;
+      padding: 3rem;
+    }
+
+    a {
+      color: #c00;
+      text-decoration: underline;
+    }
+
+    a:focus,
+    a:hover {
+      color: #a00;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    caption {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #eee;
+      border-bottom: 0.25rem solid #ccc;
+    }
+
+    tbody tr {
+      border-bottom: 0.0625rem solid #ccc;
+    }
+
+    tr:hover {
+      background-color: #fafafa;
+    }
+
+    th,
+    td {
+      padding: 0.75rem 0.5rem 0.5rem;
+    }
+
+    th {
+      font-weight: bold;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
 
@@ -41,7 +96,7 @@
       TemplateTemplate(document.querySelector('#row-template'), {
         '.name': 'TemplateTemplate',
         '.author': 'Jason Garber',
-        '.url': 'https://github.com/jgarber623/TemplateTemplate',
+        '.url': 'github.com/jgarber623/TemplateTemplate',
         '.languages': 'JavaScript'
       })
     );
@@ -56,7 +111,7 @@
         'th': 'CashCash',
         'th + td': anchor,
         '.url': ['github.com/jgarber623/CashCash', {
-          'style': 'font-weight: bold;'
+          'style': 'font-style: italic;'
         }],
         'td:last-child': TemplateTemplate('#anchor-template', {
           'a': ['JavaScript', {

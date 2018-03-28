@@ -120,7 +120,6 @@ A more complex example, inserting a row into a `<table>` with different types of
 
 <script>
   var tbody = document.querySelector('#projects tbody');
-
   var anchor = document.createElement('a');
 
   anchor.setAttribute('href', 'https://sixtwothree.org');
@@ -131,11 +130,11 @@ A more complex example, inserting a row into a `<table>` with different types of
       'th': 'CashCash',
       'th + td': anchor,
       '.url': ['github.com/jgarber623/CashCash', {
-        'style': 'font-weight: bold;'
+        'style': 'font-style: italic;'
       }],
       'td:last-child': TemplateTemplate('#anchor-template', {
         'a': ['JavaScript', {
-          'href': 'https://github.com/search?q=language%3AJavaScript',
+          'href': 'github.com/search?q=language%3AJavaScript',
           'target': '_blank'
         }]
       })
