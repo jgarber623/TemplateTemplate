@@ -149,9 +149,11 @@ The example above demonstrates a handful of additional features that you may fin
 // The first argument to TemplateTemplate may also be a valid CSS selector.
 TemplateTemplate('#row-template', {
   'th': 'CashCash',
+
   // TemplateTemplate will use `appendChild` when given an instance of
   // a `DocumentFragment` or an `HTMLElement`.
   'th + td': anchor,
+
   // When an array is passed as a value, TemplateTemplate will use the
   // first index in the array as the `textContent` for the node. The
   // second index is a hash of key/value pairs which are added to the
@@ -159,6 +161,7 @@ TemplateTemplate('#row-template', {
   '.url': ['github.com/jgarber623/CashCash', {
     'style': 'font-weight: bold;'
   }],
+
   // TemplateTemplate may also be used to generate content from another
   // `<template>` and reuse it on the fly!
   'td:last-child': TemplateTemplate('#anchor-template', {
