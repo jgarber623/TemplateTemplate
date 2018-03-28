@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./scripts/build.js; ./scripts/stats.js",
     "stats": "./scripts/stats.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "$(npm bin)/eslint ."
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "cli-table": "^0.3.1",
     "colors": "^1.2.1",
     "comma-number": "^2.0.0",
+    "eslint": "^4.19.1",
     "gzip-size": "^4.1.0",
     "uglify-js": "^2.8.29"
   }
