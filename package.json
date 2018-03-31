@@ -18,6 +18,9 @@
     "url": "https://sixtwothree.org"
   },
   "main": "dist/templatetemplate.js",
+  "directories": {
+    "example": "./example"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jgarber623/TemplateTemplate.git"
