@@ -1,0 +1,34 @@
+{
+  "name": "templatetemplate",
+  "description": "A very small JavaScript <template> manipulation library.",
+  "version": "0.1.4",
+  "main": "dist/templatetemplate.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "example",
+    "node_modules",
+    "scripts",
+    "CONTRIBUTING.md"
+  ],
+  "keywords": [
+    "dom",
+    "javascript",
+    "template"
+  ],
+  "authors": [
+    {
+      "name": "Jason Garber",
+      "email": "jason@sixtwothree.org",
+      "homepage": "https://sixtwothree.org"
+    }
+  ],
+  "homepage": "https://github.com/jgarber623/TemplateTemplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgarber623/TemplateTemplate.git"
+  }
+}
