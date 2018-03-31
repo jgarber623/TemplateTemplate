@@ -3,6 +3,7 @@
 **A very small JavaScript `<template>` manipulation library.**
 
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
+[![Bower](https://img.shields.io/bower/v/templatetemplate.svg?style=for-the-badge)](https://bower.io/search/?q=templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Build](https://img.shields.io/travis/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://travis-ci.org/jgarber623/TemplateTemplate)
 
@@ -35,8 +36,9 @@ TemplateTemplate is also really tiny:
 You've got a couple options for adding TemplateTemplate to your project:
 
 - [Download a tagged version](https://github.com/jgarber623/TemplateTemplate/tags) from GitHub and do it yourself (old school).
-- Install using [npm](https://www.npmjs.com/package/@jgarber/templatetemplate): `npm install @jgarber/templatetemplate`
+- Install using [npm](https://www.npmjs.com/package/@jgarber/templatetemplate): `npm install @jgarber/templatetemplate --save`
 - Install using [Yarn](https://yarnpkg.com/en/package/@jgarber/templatetemplate): `yarn add @jgarber/templatetemplate`
+- Install using [Bower](https://bower.io/search/?q=templatetemplate): `bower install templatetemplate --save`
 
 ## Usage
 
