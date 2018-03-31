@@ -1,6 +1,8 @@
 (function(root, factory) {
   root.TemplateTemplate = factory(root.document);
 }(this, function(document) {
+  'use strict';
+
   return function(template, insertions) {
     template = template instanceof HTMLElement ? template : document.querySelector(template);
 

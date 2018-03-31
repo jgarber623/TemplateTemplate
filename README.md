@@ -6,6 +6,8 @@
 [![Bower](https://img.shields.io/bower/v/templatetemplate.svg?style=for-the-badge)](https://bower.io/search/?q=templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Build](https://img.shields.io/travis/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://travis-ci.org/jgarber623/TemplateTemplate)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
+[![Coverage](https://img.shields.io/codeclimate/coverage/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
 
 ### Key Features
 
@@ -18,15 +20,15 @@ TemplateTemplate is also really tiny:
   <tbody>
     <tr>
       <th>Uncompressed</th>
-      <td>1,436 bytes</td>
+      <td>1,452 bytes</td>
     </tr>
     <tr>
       <th>Minified</th>
-      <td>828 bytes</td>
+      <td>841 bytes</td>
     </tr>
     <tr>
       <th>Minified and gzipped</th>
-      <td>486 bytes</td>
+      <td>494 bytes</td>
     </tr>
   </tbody>
 </table>
@@ -201,7 +203,7 @@ TemplateTemplate is written and maintained by [Jason Garber](https://sixtwothree
 
 - [CashCash](https://github.com/jgarber623/CashCash), a very small DOM library inspired by jQuery.
 - [RadioRadio](https://github.com/jgarber623/RadioRadio), a very small [PubSub](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) library.
-- [RouterRouter](https://github.com/jgarber623/RouterRouter), a very small routing library extracted from [Backbone's Router](http://backbonejs.org/docs/backbone.html#section-169).
+- [RouterRouter](https://github.com/jgarber623/RouterRouter), a very small routing library extracted from [Backbone's Router](http://backbonejs.org/docs/backbone.html#section-185).
 
 ## License
 

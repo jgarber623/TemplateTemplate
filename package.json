@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/templatetemplate",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A very small JavaScript <template> manipulation library.",
   "keywords": [
     "dom",
@@ -28,7 +28,8 @@
   "scripts": {
     "build": "./scripts/build.js; ./scripts/stats.js",
     "stats": "./scripts/stats.js",
-    "test": "$(npm bin)/eslint ."
+    "test": "npm run test:lint",
+    "test:lint": "$(npm bin)/eslint ."
   },
   "devDependencies": {
     "cli-table": "^0.3.1",

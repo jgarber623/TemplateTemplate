@@ -1,5 +1,5 @@
 /*!
- *  TemplateTemplate 0.1.4
+ *  TemplateTemplate 0.1.5
  *
  *  A very small JavaScript <template> manipulation library.
  *
@@ -13,6 +13,7 @@
 (function(root, factory) {
   root.TemplateTemplate = factory(root.document);
 })(this, function(document) {
+  "use strict";
   return function(template, insertions) {
     template = template instanceof HTMLElement ? template : document.querySelector(template);
     if (template === null) {
