@@ -1,9 +1,10 @@
 {
   "name": "templatetemplate",
   "description": "A very small JavaScript <template> manipulation library.",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "dist/templatetemplate.js",
   "moduleType": [
+    "amd",
     "globals"
   ],
   "license": "MIT",
@@ -16,7 +17,10 @@
   ],
   "keywords": [
     "dom",
+    "dom-library",
+    "dom-manipulation",
     "javascript",
+    "queryselector",
     "template"
   ],
   "authors": [

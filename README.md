@@ -13,6 +13,7 @@
 
 - Uses established Web standards (e.g. `<template>`, `document.querySelector`)
 - Dependency-free
+- AMD/Node module support
 
 TemplateTemplate is also really tiny:
 
@@ -20,15 +21,15 @@ TemplateTemplate is also really tiny:
   <tbody>
     <tr>
       <th>Uncompressed</th>
-      <td>1,452 bytes</td>
+      <td>1,839 bytes</td>
     </tr>
     <tr>
       <th>Minified</th>
-      <td>841 bytes</td>
+      <td>1,092 bytes</td>
     </tr>
     <tr>
       <th>Minified and gzipped</th>
-      <td>494 bytes</td>
+      <td>582 bytes</td>
     </tr>
   </tbody>
 </table>
@@ -37,7 +38,7 @@ TemplateTemplate is also really tiny:
 
 You've got a couple options for adding TemplateTemplate to your project:
 
-- [Download a tagged version](https://github.com/jgarber623/TemplateTemplate/tags) from GitHub and do it yourself (old school).
+- [Download a tagged version](https://github.com/jgarber623/TemplateTemplate/tags) from GitHub and do it yourself _(old school)_.
 - Install using [npm](https://www.npmjs.com/package/@jgarber/templatetemplate): `npm install @jgarber/templatetemplate --save`
 - Install using [Yarn](https://yarnpkg.com/en/package/@jgarber/templatetemplate): `yarn add @jgarber/templatetemplate`
 - Install using [Bower](https://bower.io/search/?q=templatetemplate): `bower install templatetemplate --save`
@@ -178,6 +179,10 @@ TemplateTemplate('#row-template', {
 })
 ```
 
+### Example
+
+For a full-featured TemplateTemplate demonstration, check out [the included example file](https://github.com/jgarber623/TemplateTemplate/blob/master/example/index.html).
+
 ## Browser Support
 
 TemplateTemplate works in all modern browsers. The library makes use of several new(ish) JavaScript features, including:
@@ -199,9 +204,9 @@ TemplateTemplate, in an effort to remain as lightweight and dependency-free as p
 
 ## Acknowledgments
 
-TemplateTemplate is written and maintained by [Jason Garber](https://sixtwothree.org/) and is another in a growing collection of small, curiously-named JavaScript utilities:
+TemplateTemplate is written and maintained by [Jason Garber](https://sixtwothree.org) and is another in a growing collection of small, curiously-named JavaScript utilities:
 
-- [CashCash](https://github.com/jgarber623/CashCash), a very small DOM library inspired by jQuery.
+- [CashCash](https://github.com/jgarber623/CashCash), a very small DOM library inspired by [jQuery](https://jquery.com).
 - [RadioRadio](https://github.com/jgarber623/RadioRadio), a very small [PubSub](https://en.wikipedia.org/wiki/Publish–subscribe_pattern) library.
 - [RouterRouter](https://github.com/jgarber623/RouterRouter), a very small routing library extracted from [Backbone's Router](http://backbonejs.org/docs/backbone.html#section-185).
 

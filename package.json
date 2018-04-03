@@ -1,10 +1,13 @@
 {
   "name": "@jgarber/templatetemplate",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A very small JavaScript <template> manipulation library.",
   "keywords": [
     "dom",
+    "dom-library",
+    "dom-manipulation",
     "javascript",
+    "queryselector",
     "template"
   ],
   "homepage": "https://github.com/jgarber623/TemplateTemplate",
@@ -28,8 +31,9 @@
   "scripts": {
     "build": "./scripts/build.js; ./scripts/stats.js",
     "stats": "./scripts/stats.js",
-    "test": "npm run test:lint",
-    "test:lint": "$(npm bin)/eslint ."
+    "test": "npm run test:lint && npm run test:specs",
+    "test:lint": "$(npm bin)/eslint .",
+    "test:specs": "node ./spec/console-runner.js file:///`pwd`/spec/runner.html"
   },
   "devDependencies": {
     "cli-table": "^0.3.1",
@@ -37,6 +41,8 @@
     "comma-number": "^2.0.0",
     "eslint": "^4.19.1",
     "gzip-size": "^4.1.0",
+    "jasmine": "^3.1.0",
+    "puppeteer": "^1.2.0",
     "uglify-js": "^2.8.29"
   }
 }
