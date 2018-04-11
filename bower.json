@@ -4,8 +4,9 @@
   "version": "0.2.0",
   "main": "dist/templatetemplate.js",
   "moduleType": [
+    "globals",
     "amd",
-    "globals"
+    "node"
   ],
   "license": "MIT",
   "ignore": [
