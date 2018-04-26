@@ -3,7 +3,6 @@
 **A very small JavaScript `<template>` manipulation library.**
 
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
-[![Bower](https://img.shields.io/bower/v/templatetemplate.svg?style=for-the-badge)](https://bower.io/search/?q=templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Build](https://img.shields.io/travis/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://travis-ci.org/jgarber623/TemplateTemplate)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
@@ -20,15 +19,15 @@ TemplateTemplate is also really tiny:
 <table>
   <tbody>
     <tr>
-      <th>Uncompressed</th>
+      <th align="left">Uncompressed</th>
       <td>1,839 bytes</td>
     </tr>
     <tr>
-      <th>Minified</th>
+      <th align="left">Minified</th>
       <td>1,092 bytes</td>
     </tr>
     <tr>
-      <th>Minified and gzipped</th>
+      <th align="left">Minified and gzipped</th>
       <td>582 bytes</td>
     </tr>
   </tbody>
@@ -187,10 +186,10 @@ For a full-featured TemplateTemplate demonstration, check out [the included exam
 
 TemplateTemplate works in all modern browsers. The library makes use of several new(ish) JavaScript features, including:
 
-- `document.querySelector` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector))
-- `document.importNode` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode))
-- `Object.entries` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries))
-- `Array.prototype.forEach()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach))
+- `document.querySelector()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector))
+- `document.importNode()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode))
+- `Object.entries()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries))
+- `Array.forEach()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach))
 
 Support for `document.querySelector` first appeared in Internet Explorer in version 8. To avoid throwing JavaScript errors in browsers that don't support this method, you can [cut the mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard):
 
