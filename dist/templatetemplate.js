@@ -1,5 +1,5 @@
 /*!
- *  TemplateTemplate 0.2.0
+ *  TemplateTemplate v0.3.0
  *
  *  A very small JavaScript <template> manipulation library.
  *
@@ -10,17 +10,11 @@
  *  TemplateTemplate may be freely distributed under the MIT license.
  */
 
-(function(root, factory) {
-  if (typeof define === "function" && define.amd) {
-    define([], factory);
-  } else if (typeof module === "object" && module.exports) {
-    module.exports = factory();
-  } else {
-    root.TemplateTemplate = factory();
-  }
-})(typeof self !== "undefined" ? self : this, function() {
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : global.TemplateTemplate = factory();
+})(this, function() {
   "use strict";
-  return function(template, insertions) {
+  function TemplateTemplate(template, insertions) {
     template = template instanceof HTMLElement ? template : document.querySelector(template);
     insertions = insertions || {};
     if (template === null || !(template instanceof HTMLTemplateElement)) {
@@ -45,5 +39,6 @@
       }
     });
     return importedNode;
-  };
+  }
+  return TemplateTemplate;
 });

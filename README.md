@@ -16,22 +16,11 @@
 
 TemplateTemplate is also really tiny:
 
-<table>
-  <tbody>
-    <tr>
-      <th align="left">Uncompressed</th>
-      <td>1,839 bytes</td>
-    </tr>
-    <tr>
-      <th align="left">Minified</th>
-      <td>1,092 bytes</td>
-    </tr>
-    <tr>
-      <th align="left">Minified and gzipped</th>
-      <td>582 bytes</td>
-    </tr>
-  </tbody>
-</table>
+| Format                 | File Size   | Gzipped Size |
+|:-----------------------|:------------|:-------------|
+| Uncompressed (module)  | 1,502 bytes | 613 bytes    |
+| Uncompressed (browser) | 1,812 bytes | 717 bytes    |
+| Minified (browser)     | 1,074 bytes | 575 bytes    |
 
 ## Getting TemplateTemplate
 
