@@ -1,6 +1,6 @@
 {
   "name": "@jgarber/templatetemplate",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A very small JavaScript <template> manipulation library.",
   "keywords": [
     "dom",
@@ -24,6 +24,7 @@
     "dist"
   ],
   "main": "dist/templatetemplate.js",
+  "module": "dist/templatetemplate.es.js",
   "directories": {
     "example": "example"
   },

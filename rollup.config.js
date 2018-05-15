@@ -34,11 +34,11 @@ export default [
     input: srcFilePath,
     output: [
       {
-        file: 'dist/templatetemplate.es.js',
+        file: pkg.module,
         format: 'es'
       },
       {
-        file: 'dist/templatetemplate.js',
+        file: pkg.main,
         format: 'umd',
         name: packageName
       }
@@ -61,7 +61,7 @@ export default [
   {
     input: srcFilePath,
     output: {
-      file: 'dist/templatetemplate.min.js',
+      file: pkg.main.replace(/\.js$/, '.min.js'),
       format: 'umd',
       name: packageName
     },
