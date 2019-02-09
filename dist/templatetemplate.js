@@ -11,7 +11,8 @@
  */
 
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : global.TemplateTemplate = factory();
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = global || self, 
+  global.TemplateTemplate = factory());
 })(this, function() {
   "use strict";
   function TemplateTemplate(template, insertions) {
