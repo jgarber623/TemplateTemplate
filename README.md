@@ -123,12 +123,12 @@ A more complex example, inserting a row into a `<table>` with different types of
     TemplateTemplate('#row-template', {
       'th': 'CashCash',
       'th + td': anchor,
-      '.url': ['github.com/jgarber623/CashCash', {
+      '.url': ['https://github.com/jgarber623/CashCash', {
         'style': 'font-style: italic;'
       }],
       'td:last-child': TemplateTemplate('#anchor-template', {
         'a': ['JavaScript', {
-          'href': 'github.com/search?q=language%3AJavaScript',
+          'href': 'https://github.com/search?q=language%3AJavaScript',
           'target': '_blank'
         }]
       })
@@ -152,7 +152,7 @@ TemplateTemplate('#row-template', {
   // first index in the array as the `textContent` for the node. The
   // second index is a hash of key/value pairs which are added to the
   // node as HTML attributes.
-  '.url': ['github.com/jgarber623/CashCash', {
+  '.url': ['https://github.com/jgarber623/CashCash', {
     'style': 'font-weight: bold;'
   }],
 
