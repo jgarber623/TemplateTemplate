@@ -33,10 +33,10 @@
     "url": "https://github.com/jgarber623/TemplateTemplate.git"
   },
   "scripts": {
-    "build": "$(npm bin)/rollup --config",
-    "start": "$(npm bin)/rollup --config --watch",
-    "test": "$(npm bin)/npm-run-all test:*",
-    "test:lint": "$(npm bin)/eslint .",
+    "build": "npx rollup --config",
+    "start": "npx rollup --config --watch",
+    "test": "npx npm-run-all test:*",
+    "test:lint": "npx eslint .",
     "test:specs": "node spec/console-runner.js file:///`pwd`/spec/runner.html"
   },
   "devDependencies": {
