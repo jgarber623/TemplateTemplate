@@ -18,9 +18,9 @@ TemplateTemplate is also really tiny:
 
 | Format                 | File Size   | Minfied Size | Gzipped Size |
 |:-----------------------|:------------|:-------------|:-------------|
-| Uncompressed (module)  | 1,502 bytes | 607 bytes    | 335 bytes    |
-| Uncompressed (browser) | 1,842 bytes | 766 bytes    | 403 bytes    |
-| Minified (browser)     | 1,084 bytes | 766 bytes    | 403 bytes    |
+| Uncompressed (module)  | 1,506 bytes | 607 bytes    | 335 bytes    |
+| Uncompressed (browser) | 1,848 bytes | 766 bytes    | 403 bytes    |
+| Minified (browser)     | 1,090 bytes | 766 bytes    | 403 bytes    |
 
 ## Getting TemplateTemplate
 
