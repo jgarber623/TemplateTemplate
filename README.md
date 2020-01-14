@@ -12,15 +12,15 @@
 
 - Uses established Web standards (e.g. `<template>`, `document.querySelector`)
 - Dependency-free
-- AMD/Node module support
+- ES2015/AMD/Node module support
 
 TemplateTemplate is also really tiny:
 
 | Format                 | File Size   | Minfied Size | Gzipped Size |
 |:-----------------------|:------------|:-------------|:-------------|
 | Uncompressed (module)  | 1,389 bytes | 919 bytes    | 502 bytes    |
-| Uncompressed (browser) | 1,725 bytes | 1080 bytes   | 580 bytes    |
-| Minified (browser)     | 1,082 bytes | 1080 bytes   | 580 bytes    |
+| Uncompressed (browser) | 1,725 bytes | 1,080 bytes  | 580 bytes    |
+| Minified (browser)     | 1,082 bytes | 1,080 bytes  | 580 bytes    |
 
 ## Getting TemplateTemplate
 
