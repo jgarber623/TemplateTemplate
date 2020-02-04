@@ -173,20 +173,13 @@ For a full-featured TemplateTemplate demonstration, check out [the included exam
 
 ## Browser Support
 
-TemplateTemplate works in all modern browsers. The library makes use of several new(ish) JavaScript features, including:
+TemplateTemplate works in modern browsers. The library makes use of several new(ish) JavaScript features, including:
 
+- Arrow function expressions ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions))
 - `document.querySelector()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector))
 - `document.importNode()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode))
 - `Object.entries()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries))
 - `Array.forEach()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach))
-
-Support for `document.querySelector` first appeared in Internet Explorer in version 8. To avoid throwing JavaScript errors in browsers that don't support this method, you can [cut the mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard):
-
-```js
-if (document.querySelector) {
-  // Your scripts here…
-}
-```
 
 TemplateTemplate, in an effort to remain as lightweight and dependency-free as possible, leaves it up to you to choose whether or not to polyfill features for older browsers.
 
