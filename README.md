@@ -176,6 +176,7 @@ For a full-featured TemplateTemplate demonstration, check out [the included exam
 TemplateTemplate works in modern browsers. The library makes use of several new(ish) JavaScript features, including:
 
 - Arrow function expressions ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions))
+- Template literals ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals))
 - `Document.querySelector()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector))
 - `Document.importNode()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode))
 - `Object.entries()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries))
