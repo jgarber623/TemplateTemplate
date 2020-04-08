@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "npx rollup --config",
+    "pretest": "npm run build",
     "start": "npx rollup --config --watch",
     "test": "npx npm-run-all test:*",
     "test:lint": "npx eslint .",
