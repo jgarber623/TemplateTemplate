@@ -1,5 +1,5 @@
 /*!
- *  TemplateTemplate v1.0.0
+ *  TemplateTemplate v1.0.1
  *
  *  A very small JavaScript <template> manipulation library.
  *
