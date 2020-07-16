@@ -169,7 +169,7 @@ TemplateTemplate('#row-template', {
 
 ### Example
 
-For a full-featured TemplateTemplate demonstration, check out [the included example file](https://github.com/jgarber623/TemplateTemplate/blob/master/example/index.html).
+For a full-featured TemplateTemplate demonstration, check out [the included example file](https://github.com/jgarber623/TemplateTemplate/blob/main/example/index.html).
 
 ## Browser Support
 
