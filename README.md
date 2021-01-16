@@ -4,7 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
-[![Build](https://img.shields.io/travis/com/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://travis-ci.com/github/jgarber623/TemplateTemplate)
+[![Build](https://img.shields.io/circleci/build/github/jgarber623/TemplateTemplate?style=for-the-badge)](https://app.circleci.com/pipelines/github/jgarber623/TemplateTemplate)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
 [![Coverage](https://img.shields.io/codeclimate/coverage/jgarber623/TemplateTemplate.svg?style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
 
