@@ -29,7 +29,7 @@
   },
   "repository": "github:jgarber623/TemplateTemplate",
   "scripts": {
-    "build": "rollup --config",
+    "build": "rollup --config --input src/templatetemplate.js --name TemplateTemplate",
     "lint": "eslint .",
     "pretest": "npm run build",
     "start": "npm run build -- --watch",
