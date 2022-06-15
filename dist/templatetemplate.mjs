@@ -9,7 +9,6 @@
  *
  *  TemplateTemplate may be freely distributed under the MIT license.
  */
-
 function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
   if (template === null || !(template instanceof HTMLTemplateElement)) {
@@ -19,19 +18,19 @@ function TemplateTemplate(template, insertions = {}) {
     throw new TypeError(`${insertions} is not an Object`);
   }
   const importedNode = document.importNode(template.content, true);
-  Object.entries(insertions).forEach(([selector, insertion]) => {
+  Object.entries(insertions).forEach((([selector, insertion]) => {
     const currentNode = importedNode.querySelector(selector);
     if (insertion instanceof Array) {
       const [textContent, attributes] = insertion;
-      Object.entries(attributes).forEach(([name, value]) => currentNode.setAttribute(name, value));
+      Object.entries(attributes).forEach((([name, value]) => currentNode.setAttribute(name, value)));
       insertion = textContent;
     }
     if (insertion instanceof DocumentFragment || insertion instanceof HTMLElement) {
       return currentNode.appendChild(insertion);
     }
     return currentNode.textContent = insertion;
-  });
+  }));
   return importedNode;
 }
 
-export default TemplateTemplate;
+export { TemplateTemplate as default };

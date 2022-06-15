@@ -9,9 +9,8 @@
  *
  *  TemplateTemplate may be freely distributed under the MIT license.
  */
-
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = global || self, 
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
   global.TemplateTemplate = factory());
 })(this, (function() {
   "use strict";
@@ -24,18 +23,18 @@
       throw new TypeError(`${insertions} is not an Object`);
     }
     const importedNode = document.importNode(template.content, true);
-    Object.entries(insertions).forEach(([selector, insertion]) => {
+    Object.entries(insertions).forEach((([selector, insertion]) => {
       const currentNode = importedNode.querySelector(selector);
       if (insertion instanceof Array) {
         const [textContent, attributes] = insertion;
-        Object.entries(attributes).forEach(([name, value]) => currentNode.setAttribute(name, value));
+        Object.entries(attributes).forEach((([name, value]) => currentNode.setAttribute(name, value)));
         insertion = textContent;
       }
       if (insertion instanceof DocumentFragment || insertion instanceof HTMLElement) {
         return currentNode.appendChild(insertion);
       }
       return currentNode.textContent = insertion;
-    });
+    }));
     return importedNode;
   }
   return TemplateTemplate;
