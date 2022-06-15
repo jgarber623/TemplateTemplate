@@ -4,9 +4,9 @@
 
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
-[![Build](https://img.shields.io/circleci/build/github/jgarber623/TemplateTemplate?logo=circleci&style=for-the-badge)](https://app.circleci.com/pipelines/github/jgarber623/TemplateTemplate)
+[![Build](https://img.shields.io/github/workflow/status/jgarber623/TemplateTemplate/CI?logo=github&style=for-the-badge)](https://github.com/jgarber623/TemplateTemplate/actions/workflows/ci.yml)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/jgarber623/TemplateTemplate.svg?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
-[![Coverage](https://img.shields.io/codeclimate/coverage/jgarber623/TemplateTemplate.svg?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
+
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/jgarber623/TemplateTemplate?logo=snyk&style=for-the-badge)](https://snyk.io/test/github/jgarber623/TemplateTemplate)
 
 ### Key Features
