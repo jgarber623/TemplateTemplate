@@ -11,9 +11,7 @@
     "template"
   ],
   "homepage": "https://github.com/jgarber623/TemplateTemplate",
-  "bugs": {
-    "url": "https://github.com/jgarber623/TemplateTemplate/issues"
-  },
+  "bugs": "https://github.com/jgarber623/TemplateTemplate/issues",
   "license": "MIT",
   "author": {
     "name": "Jason Garber",
@@ -29,17 +27,13 @@
   "directories": {
     "example": "example"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jgarber623/TemplateTemplate.git"
-  },
+  "repository": "github:jgarber623/TemplateTemplate",
   "scripts": {
     "build": "rollup --config",
+    "lint": "eslint .",
     "pretest": "npm run build",
-    "start": "rollup --config --watch",
-    "test": "npm-run-all test:*",
-    "test:lint": "eslint .",
-    "test:specs": "node spec/console-runner.js file:///`pwd`/spec/runner.html"
+    "start": "npm run build -- --watch",
+    "test": "node spec/console-runner.js file:///`pwd`/spec/runner.html"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
