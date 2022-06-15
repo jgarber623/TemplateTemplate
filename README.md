@@ -15,14 +15,6 @@
 - Dependency-free
 - ES2015/AMD/Node module support
 
-TemplateTemplate is also really tiny:
-
-| Format                 | File Size   | Minfied Size | Gzipped Size |
-|:-----------------------|:------------|:-------------|:-------------|
-| Uncompressed (module)  | 1,389 bytes | 915 bytes    | 498 bytes    |
-| Uncompressed (browser) | 1,725 bytes | 1,076 bytes  | 576 bytes    |
-| Minified (browser)     | 1,078 bytes | 1,076 bytes  | 576 bytes    |
-
 ## Getting TemplateTemplate
 
 You've got a couple options for adding TemplateTemplate to your project:
