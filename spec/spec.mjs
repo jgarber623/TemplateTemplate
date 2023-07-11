@@ -78,7 +78,7 @@ describe('TemplateTemplate', () => {
 
     it('renders simple text content', () => {
       const $div = TemplateTemplate('#templ', {
-        'a': 'foo'
+        a: 'foo'
       }).querySelector('div');
 
       expect($div.innerHTML).toBe('<a>foo</a>');
@@ -86,8 +86,8 @@ describe('TemplateTemplate', () => {
 
     it('renders simple text content and HTML attributes', () => {
       const $div = TemplateTemplate('#templ', {
-        'a': ['foo', {
-          'href': 'https://example.com'
+        a: ['foo', {
+          href: 'https://example.com'
         }]
       }).querySelector('div');
 
@@ -96,7 +96,7 @@ describe('TemplateTemplate', () => {
 
     it('renders an HTMLElement', () => {
       const $div = TemplateTemplate('#templ', {
-        'a': document.createElement('span')
+        a: document.createElement('span')
       }).querySelector('div');
 
       expect($div.innerHTML).toBe('<a><span></span></a>');
@@ -106,9 +106,9 @@ describe('TemplateTemplate', () => {
       document.body.appendChild(buildTemplateElement('templ2', '<b></b>'));
 
       const $div = TemplateTemplate('#templ', {
-        'a': TemplateTemplate('#templ2', {
-          'b': ['foo', {
-            'class': 'bar'
+        a: TemplateTemplate('#templ2', {
+          b: ['foo', {
+            class: 'bar'
           }]
         })
       }).querySelector('div');
