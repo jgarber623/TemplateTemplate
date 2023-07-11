@@ -28,7 +28,7 @@ function TemplateTemplate(template, insertions = {}) {
     if (insertion instanceof DocumentFragment || insertion instanceof HTMLElement) {
       return currentNode.appendChild(insertion);
     }
-    return currentNode.textContent = insertion;
+    currentNode.textContent = insertion;
   }));
   return importedNode;
 }
