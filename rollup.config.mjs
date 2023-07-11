@@ -7,7 +7,7 @@ const pkg = JSON.parse(readFileSync('./package.json'));
 const input = './src/templatetemplate.mjs';
 const name = 'TemplateTemplate';
 
-const banner =  `/*!
+const banner = `/*!
  *  ${name} v${pkg.version}
  *
  *  ${pkg.description}
