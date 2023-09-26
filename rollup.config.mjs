@@ -14,7 +14,7 @@ const banner = `/*!
  *
  *  Source code available at: ${pkg.homepage}
  *
- *  (c) 2018-present ${pkg.author.name} (${pkg.author.url})
+ *  (c) 2018-${new Date().getFullYear()} ${pkg.author.name} (${pkg.author.url})
  *
  *  ${name} may be freely distributed under the ${pkg.license} license.
  */
