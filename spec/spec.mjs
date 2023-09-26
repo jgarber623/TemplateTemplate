@@ -1,4 +1,4 @@
-import TemplateTemplate from '../dist/templatetemplate.mjs';
+import TemplateTemplate from '../src/templatetemplate.mjs';
 
 describe('TemplateTemplate', () => {
   const typeErrorMessage = /is not an HTMLTemplateElement$/;
