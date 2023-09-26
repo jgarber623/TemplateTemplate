@@ -1,13 +1,13 @@
-/*!
- *  TemplateTemplate v1.0.4
+/**
+ * @name TemplateTemplate
+ * @version 1.0.4
  *
- *  A very small JavaScript <template> manipulation library.
+ * @file A very small JavaScript <template> manipulation library.
  *
- *  Source code available at: https://github.com/jgarber623/TemplateTemplate
+ * {@link https://github.com/jgarber623/TemplateTemplate}
  *
- *  (c) 2018-present Jason Garber (https://sixtwothree.org)
- *
- *  TemplateTemplate may be freely distributed under the MIT license.
+ * @copyright 2018-2023 Jason Garber (https://sixtwothree.org)
+ * @license MIT
  */
 (function(global, factory) {
   typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
