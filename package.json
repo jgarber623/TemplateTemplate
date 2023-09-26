@@ -19,7 +19,9 @@
     "url": "https://sixtwothree.org"
   },
   "files": [
-    "dist"
+    "dist/*",
+    "example/*",
+    "src/*"
   ],
   "main": "dist/templatetemplate.js",
   "browser": "dist/templatetemplate.min.js",
