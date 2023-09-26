@@ -84,6 +84,16 @@ describe('TemplateTemplate', () => {
       expect(div.innerHTML).toBe('<a>foo</a>');
     });
 
+    it('renders HTML attributes', () => {
+      const div = TemplateTemplate('#templ', {
+        div: [null, {
+          class: 'example'
+        }]
+      }).querySelector('div');
+
+      expect(div.outerHTML).toBe('<div class="example"><a></a></div>');
+    });
+
     it('renders simple text content and HTML attributes', () => {
       const div = TemplateTemplate('#templ', {
         a: ['foo', {
