@@ -11,13 +11,13 @@
 
 - Uses established Web standards (e.g. `<template>`, `document.querySelector`)
 - Dependency-free
-- ES2015/AMD/Node module support
+- ESM/CommonJS/AMD module support
 
 ## Getting TemplateTemplate
 
 You've got a couple options for adding TemplateTemplate to your project:
 
-- [Download a tagged version](https://github.com/jgarber623/TemplateTemplate/tags) from GitHub and do it yourself _(old school)_.
+- [Download a release](https://github.com/jgarber623/TemplateTemplate/releases) from GitHub and do it yourself _(old school)_.
 - Install using [npm](https://www.npmjs.com/package/@jgarber/templatetemplate): `npm install @jgarber/templatetemplate --save`
 - Install using [Yarn](https://yarnpkg.com/en/package/@jgarber/templatetemplate): `yarn add @jgarber/templatetemplate`
 
@@ -111,15 +111,19 @@ A more complex example, inserting a row into a `<table>` with different types of
 
   tbody.appendChild(
     TemplateTemplate('#row-template', {
-      'th': 'CashCash',
+      tr: [null, {
+        class: 'project',
+        id: 'project-cashcash'
+      }],
+      th: 'CashCash',
       'th + td': anchor,
       '.url': ['https://github.com/jgarber623/CashCash', {
-        'style': 'font-style: italic;'
+        style: 'font-style: italic;'
       }],
       'td:last-child': TemplateTemplate('#anchor-template', {
-        'a': ['JavaScript', {
-          'href': 'https://github.com/search?q=language%3AJavaScript',
-          'target': '_blank'
+        a: ['JavaScript', {
+          href: 'https://github.com/search?q=language%3AJavaScript',
+          target: '_blank'
         }]
       })
     })
@@ -132,26 +136,33 @@ The example above demonstrates a handful of additional features that you may fin
 ```js
 // The first argument to TemplateTemplate may also be a valid CSS selector.
 TemplateTemplate('#row-template', {
-  'th': 'CashCash',
+  // When an array is passed as a value, TemplateTemplate will use the first
+  // index in the array as the `textContent` for the node. If this value is
+  // `null`, TemplateTemplate skips setting the node's `textContent`.
+  //
+  // The second index is a hash of key/value pairs which are added to the node
+  // as HTML attributes.
+  tr: [null, {
+    class: 'project',
+    id: 'project-cashcash'
+  }],
 
-  // TemplateTemplate will use `appendChild` when given an instance of
-  // a `DocumentFragment` or an `HTMLElement`.
+  th: 'CashCash',
+
+  // TemplateTemplate will use `appendChild` when given an instance of a
+  // `DocumentFragment` or an `HTMLElement`.
   'th + td': anchor,
 
-  // When an array is passed as a value, TemplateTemplate will use the
-  // first index in the array as the `textContent` for the node. The
-  // second index is a hash of key/value pairs which are added to the
-  // node as HTML attributes.
   '.url': ['https://github.com/jgarber623/CashCash', {
-    'style': 'font-weight: bold;'
+    style: 'font-weight: bold;'
   }],
 
   // TemplateTemplate may also be used to generate content from another
   // `<template>` and reuse it on the fly!
   'td:last-child': TemplateTemplate('#anchor-template', {
-    'a': ['JavaScript', {
-      'href': 'https://github.com/search?q=language%3AJavaScript',
-      'target': '_blank'
+    a: ['JavaScript', {
+      href: 'https://github.com/search?q=language%3AJavaScript',
+      target: '_blank'
     }]
   })
 })
@@ -163,16 +174,7 @@ For a full-featured TemplateTemplate demonstration, check out [the included exam
 
 ## Browser Support
 
-TemplateTemplate works in modern browsers. The library makes use of several new(ish) JavaScript features, including:
-
-- Arrow function expressions ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions))
-- Template literals ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals))
-- `Document.querySelector()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector))
-- `Document.importNode()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/importNode))
-- `Object.entries()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries))
-- `Array.prototype.forEach()` ([MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach))
-
-TemplateTemplate, in an effort to remain as lightweight and dependency-free as possible, leaves it up to you to choose whether or not to polyfill features for older browsers.
+**TemplateTemplate works in modern browsers.** The library makes use of several new(ish) JavaScript features and, in an effort to remain as lightweight and dependency-free as possible, leaves it up to you to choose whether or not to polyfill features for older browsers.
 
 ## Acknowledgments
 
