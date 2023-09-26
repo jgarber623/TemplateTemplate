@@ -28,7 +28,9 @@ export default function TemplateTemplate(template, insertions = {}) {
       return currentNode.appendChild(insertion);
     }
 
-    currentNode.textContent = insertion;
+    if (insertion !== null) {
+      currentNode.textContent = insertion;
+    }
   });
 
   return importedNode;
