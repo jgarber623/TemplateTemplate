@@ -82,6 +82,14 @@ describe('TemplateTemplate', () => {
   describe('when `insertions` argument is an object', () => {
     beforeAll(() => document.body.appendChild(buildTemplateElement()));
 
+    it('noops null values', () => {
+      const div = TemplateTemplate('#templ', {
+        div: null
+      }).querySelector('div');
+
+      expect(div.outerHTML).toBe('<div><a></a></div>');
+    });
+
     it('renders simple text content', () => {
       const div = TemplateTemplate('#templ', {
         a: 'foo'
