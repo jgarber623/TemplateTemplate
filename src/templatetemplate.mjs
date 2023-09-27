@@ -21,7 +21,7 @@ export default function TemplateTemplate(template, insertions = {}) {
   Object.entries(insertions).forEach(([selector, insertion]) => {
     const currentNode = importedNode.querySelector(selector);
 
-    if (insertion instanceof Array) {
+    if (Array.isArray(insertion)) {
       const [textContent, attributes] = insertion;
 
       Object.entries(attributes).forEach(([name, value]) => {
