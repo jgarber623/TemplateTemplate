@@ -1,4 +1,4 @@
-import TemplateTemplate from '../src/templatetemplate.mjs';
+import TemplateTemplate from '../dist/templatetemplate.mjs';
 
 describe('TemplateTemplate', () => {
   const buildTemplateElement = (id = 'templ', innerHTML = '<div><a></a></div>') => {
