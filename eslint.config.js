@@ -4,20 +4,19 @@ const globals = require('globals');
 module.exports = [
   ...config,
   {
-    ignores: ['dist/*.?(m)js']
+    ignores: ['dist']
   },
   {
-    files: ['**/*.?(m)js'],
+    files: ['src/**/*.?(m)js'],
     languageOptions: {
-      globals: {
-        ...globals.browser
-      }
+      globals: globals.browser
     }
   },
   {
     files: ['spec/**/*[sS]pec.?(m)js'],
     languageOptions: {
       globals: {
+        ...globals.browser,
         ...globals.jasmine
       }
     }

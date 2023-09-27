@@ -1,36 +1,34 @@
 import TemplateTemplate from '../dist/templatetemplate.mjs';
 
 describe('TemplateTemplate', () => {
-  const typeErrorMessage = /is not an HTMLTemplateElement$/;
+  const buildTemplateElement = (id = 'templ', innerHTML = '<div><a></a></div>') => {
+    const template = document.createElement('template');
 
-  function buildTemplateElement(id = 'templ', innerHTML = '<div><a></a></div>') {
-    const $template = document.createElement('template');
+    template.id = id;
+    template.innerHTML = innerHTML;
 
-    $template.id = id;
-    $template.innerHTML = innerHTML;
-
-    return $template;
-  }
+    return template;
+  };
 
   it('is a function', () => {
     expect(typeof TemplateTemplate).toBe('function');
   });
 
   describe('when `template` argument is null', () => {
-    it('throws an error', () => {
-      expect(() => TemplateTemplate()).toThrowError(TypeError, typeErrorMessage);
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate()).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
   describe('when `template` argument is not an HTMLTemplateElement', () => {
-    it('throws an error', () => {
-      expect(() => TemplateTemplate(document.createElement('div'))).toThrowError(TypeError, typeErrorMessage);
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('div'))).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
   describe('when `template` argument references an element that does not exist', () => {
-    it('throws an error', () => {
-      expect(() => TemplateTemplate('#foo')).toThrowError(TypeError, typeErrorMessage);
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate('#foo')).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
@@ -38,17 +36,17 @@ describe('TemplateTemplate', () => {
     beforeAll(() => document.body.appendChild(buildTemplateElement()));
 
     it('returns a DocumentFragment', () => {
-      const $templ = document.querySelector('#templ');
+      const template = document.querySelector('#templ');
 
-      expect(TemplateTemplate($templ) instanceof DocumentFragment).toBe(true);
+      expect(TemplateTemplate(template) instanceof DocumentFragment).toBe(true);
     });
 
     it('returns an empty `<a>`', () => {
-      const $templ = document.querySelector('#templ');
-      const $div = TemplateTemplate($templ).querySelector('div');
+      const template = document.querySelector('#templ');
+      const div = TemplateTemplate(template).querySelector('div');
 
-      expect($div).not.toBe(null);
-      expect($div.innerHTML).toBe('<a></a>');
+      expect(div).not.toBe(null);
+      expect(div.innerHTML).toBe('<a></a>');
     });
   });
 
@@ -60,52 +58,78 @@ describe('TemplateTemplate', () => {
     });
 
     it('returns an empty `<a>`', () => {
-      const $div = TemplateTemplate('#templ').querySelector('div');
+      const div = TemplateTemplate('#templ').querySelector('div');
 
-      expect($div).not.toBe(null);
-      expect($div.innerHTML).toBe('<a></a>');
+      expect(div).not.toBe(null);
+      expect(div.innerHTML).toBe('<a></a>');
     });
   });
 
   describe('when `insertions` argument is not an object', () => {
-    it('throws an error', () => {
-      expect(() => TemplateTemplate(document.createElement('template'), 'foo')).toThrowError(TypeError, /is not an Object/);
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('template'), 'foo')).toThrowError(TypeError, /is not an Object$/);
+    });
+
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('template'), null)).toThrowError(TypeError, /is not an Object$/);
+    });
+
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('template'), [])).toThrowError(TypeError, /is not an Object$/);
     });
   });
 
   describe('when `insertions` argument is an object', () => {
     beforeAll(() => document.body.appendChild(buildTemplateElement()));
 
+    it('noops null values', () => {
+      const div = TemplateTemplate('#templ', {
+        div: null
+      }).querySelector('div');
+
+      expect(div.outerHTML).toBe('<div><a></a></div>');
+    });
+
     it('renders simple text content', () => {
-      const $div = TemplateTemplate('#templ', {
+      const div = TemplateTemplate('#templ', {
         a: 'foo'
       }).querySelector('div');
 
-      expect($div.innerHTML).toBe('<a>foo</a>');
+      expect(div.innerHTML).toBe('<a>foo</a>');
+    });
+
+    it('renders HTML attributes', () => {
+      const div = TemplateTemplate('#templ', {
+        div: [null, {
+          class: 'example'
+        }]
+      }).querySelector('div');
+
+      expect(div.outerHTML).toBe('<div class="example"><a></a></div>');
     });
 
     it('renders simple text content and HTML attributes', () => {
-      const $div = TemplateTemplate('#templ', {
+      const div = TemplateTemplate('#templ', {
         a: ['foo', {
           href: 'https://example.com'
         }]
       }).querySelector('div');
 
-      expect($div.innerHTML).toBe('<a href="https://example.com">foo</a>');
+      expect(div.innerHTML).toBe('<a href="https://example.com">foo</a>');
     });
 
     it('renders an HTMLElement', () => {
-      const $div = TemplateTemplate('#templ', {
+      const div = TemplateTemplate('#templ', {
         a: document.createElement('span')
       }).querySelector('div');
 
-      expect($div.innerHTML).toBe('<a><span></span></a>');
+      expect(div.innerHTML).toBe('<a><span></span></a>');
     });
 
     it('renders a DocumentFragment', () => {
       document.body.appendChild(buildTemplateElement('templ2', '<b></b>'));
 
-      const $div = TemplateTemplate('#templ', {
+      const div = TemplateTemplate('#templ', {
         a: TemplateTemplate('#templ2', {
           b: ['foo', {
             class: 'bar'
@@ -113,7 +137,7 @@ describe('TemplateTemplate', () => {
         })
       }).querySelector('div');
 
-      expect($div.innerHTML).toBe('<a><b class="bar">foo</b></a>');
+      expect(div.innerHTML).toBe('<a><b class="bar">foo</b></a>');
     });
   });
 });

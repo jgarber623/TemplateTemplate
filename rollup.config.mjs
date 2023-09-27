@@ -7,16 +7,16 @@ const pkg = JSON.parse(readFileSync('./package.json'));
 const input = './src/templatetemplate.mjs';
 const name = 'TemplateTemplate';
 
-const banner = `/*!
- *  ${name} v${pkg.version}
+const banner = `/**
+ * @name ${name}
+ * @version ${pkg.version}
  *
- *  ${pkg.description}
+ * @file ${pkg.description}
  *
- *  Source code available at: ${pkg.homepage}
+ * {@link ${pkg.homepage}}
  *
- *  (c) 2018-present ${pkg.author.name} (${pkg.author.url})
- *
- *  ${name} may be freely distributed under the ${pkg.license} license.
+ * @copyright 2018-${new Date().getFullYear()} ${pkg.author.name} (${pkg.author.url})
+ * @license ${pkg.license}
  */
 `;
 

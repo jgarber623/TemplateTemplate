@@ -1,3 +1,10 @@
+/**
+ * @param {(string|HTMLTemplateElement)} template
+ * @param {Object} insertions
+ *
+ * @throws {TypeError} Argument template must be a string or an HTMLTemplateElement.
+ * @throws {TypeError} Argument insertions must be an Object.
+ */
 export default function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
 
@@ -5,7 +12,7 @@ export default function TemplateTemplate(template, insertions = {}) {
     throw new TypeError(`${template} is not an HTMLTemplateElement`);
   }
 
-  if (typeof insertions !== 'object') {
+  if (typeof insertions !== 'object' || insertions === null || Array.isArray(insertions)) {
     throw new TypeError(`${insertions} is not an Object`);
   }
 
@@ -14,7 +21,7 @@ export default function TemplateTemplate(template, insertions = {}) {
   Object.entries(insertions).forEach(([selector, insertion]) => {
     const currentNode = importedNode.querySelector(selector);
 
-    if (insertion instanceof Array) {
+    if (Array.isArray(insertion)) {
       const [textContent, attributes] = insertion;
 
       Object.entries(attributes).forEach(([name, value]) => {
@@ -28,7 +35,9 @@ export default function TemplateTemplate(template, insertions = {}) {
       return currentNode.appendChild(insertion);
     }
 
-    currentNode.textContent = insertion;
+    if (insertion !== null) {
+      currentNode.textContent = insertion;
+    }
   });
 
   return importedNode;
