@@ -23,7 +23,7 @@ You've got a couple options for adding TemplateTemplate to your project:
 
 ## Usage
 
-TemplateTemplate takes two arguments: a reference to a `<template>` element and a hash of `insertions` defining the content to insert into the `<template>`.
+TemplateTemplate takes two arguments: a reference to a `<template>` element and an object of `insertions` defining the content to insert into the `<template>`.
 
 ### Basic
 
@@ -69,7 +69,7 @@ A basic example, inserting a row into a `<table>`:
 </script>
 ```
 
-In the example above, a reference to the `<template>` element is passed to TemplateTemplate using [`document.querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector). The `insertions` hash is a map of key/value pairs where the key (e.g. `'.name'`) is a valid [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) and the `value` (e.g. `'TemplateTemplate'`) is a string of text to insert into the selected node.
+In the example above, a reference to the `<template>` element is passed to TemplateTemplate using [`document.querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector). The `insertions` argument an object whose keys (e.g. `'.name'`) are valid [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) and whose values (e.g. `'TemplateTemplate'`) are strings of text to insert into the selected node.
 
 ### Advanced
 
@@ -140,8 +140,8 @@ TemplateTemplate('#row-template', {
   // index in the array as the `textContent` for the node. If this value is
   // `null`, TemplateTemplate skips setting the node's `textContent`.
   //
-  // The second index is a hash of key/value pairs which are added to the node
-  // as HTML attributes.
+  // The second index is an object whose properties are added to the node as
+  // HTML attributes.
   tr: [null, {
     class: 'project',
     id: 'project-cashcash'
