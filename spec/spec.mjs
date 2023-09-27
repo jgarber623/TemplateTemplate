@@ -1,8 +1,6 @@
 import TemplateTemplate from '../src/templatetemplate.mjs';
 
 describe('TemplateTemplate', () => {
-  const typeErrorMessage = /is not an HTMLTemplateElement$/;
-
   const buildTemplateElement = (id = 'templ', innerHTML = '<div><a></a></div>') => {
     const template = document.createElement('template');
 
@@ -18,19 +16,19 @@ describe('TemplateTemplate', () => {
 
   describe('when `template` argument is null', () => {
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate()).toThrowError(TypeError, typeErrorMessage);
+      expect(() => TemplateTemplate()).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
   describe('when `template` argument is not an HTMLTemplateElement', () => {
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate(document.createElement('div'))).toThrowError(TypeError, typeErrorMessage);
+      expect(() => TemplateTemplate(document.createElement('div'))).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
   describe('when `template` argument references an element that does not exist', () => {
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate('#foo')).toThrowError(TypeError, typeErrorMessage);
+      expect(() => TemplateTemplate('#foo')).toThrowError(TypeError, /is not an HTMLTemplateElement$/);
     });
   });
 
@@ -69,7 +67,15 @@ describe('TemplateTemplate', () => {
 
   describe('when `insertions` argument is not an object', () => {
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate(document.createElement('template'), 'foo')).toThrowError(TypeError, /is not an Object/);
+      expect(() => TemplateTemplate(document.createElement('template'), 'foo')).toThrowError(TypeError, /is not an Object$/);
+    });
+
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('template'), null)).toThrowError(TypeError, /is not an Object$/)
+    });
+
+    it('throws a TypeError', () => {
+      expect(() => TemplateTemplate(document.createElement('template'), [])).toThrowError(TypeError, /is not an Object$/)
     });
   });
 
