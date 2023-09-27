@@ -32,6 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Change package scope
+        run: |
+          sed -i -E "s/@.+(\/templatetemplate)/@${{ github.repository_owner }}\1/" package.json
+          cat package.json
       - uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
