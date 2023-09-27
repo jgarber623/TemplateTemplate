@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1 (2023-09-27)
+
+- 77b3c33 docs: Use object nomenclature
+- a135a75 fix: Run build script before publish 🤦🏻‍♂️
+
 ## 2.0.0 (2023-09-27)
 
 - 46460b8 chore: Add publish workflow
