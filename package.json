@@ -33,13 +33,18 @@
   "scripts": {
     "build": "rollup --config",
     "lint": "eslint .",
-    "start": "npm run build -- --watch",
+    "pretest": "npm run build",
+    "start": "concurrently --kill-others-on-fail --prefix-colors yellow,blue 'npm:start:*'",
+    "start:build": "npm run build -- --watch",
+    "start:serve": "http-server .",
     "test": "jasmine-browser-runner runSpecs"
   },
   "devDependencies": {
     "@jgarber/eslint-config": "^1.1.1",
     "@rollup/plugin-terser": "^0.4.3",
+    "concurrently": "^8.2.1",
     "globals": "^13.22.0",
+    "http-server": "^14.1.1",
     "jasmine-browser-runner": "^2.3.0",
     "jasmine-core": "^5.1.1",
     "rollup": "^3.29.3"
