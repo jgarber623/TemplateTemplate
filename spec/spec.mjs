@@ -71,11 +71,11 @@ describe('TemplateTemplate', () => {
     });
 
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate(document.createElement('template'), null)).toThrowError(TypeError, /is not an Object$/)
+      expect(() => TemplateTemplate(document.createElement('template'), null)).toThrowError(TypeError, /is not an Object$/);
     });
 
     it('throws a TypeError', () => {
-      expect(() => TemplateTemplate(document.createElement('template'), [])).toThrowError(TypeError, /is not an Object$/)
+      expect(() => TemplateTemplate(document.createElement('template'), [])).toThrowError(TypeError, /is not an Object$/);
     });
   });
 
