@@ -1,3 +1,10 @@
+/**
+ * @param {(string|HTMLTemplateElement)} template
+ * @param {Object} insertions
+ *
+ * @throws {TypeError} Argument template must be a string or an HTMLTemplateElement.
+ * @throws {TypeError} Argument insertions must be an Object.
+ */
 export default function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
 
@@ -5,7 +12,7 @@ export default function TemplateTemplate(template, insertions = {}) {
     throw new TypeError(`${template} is not an HTMLTemplateElement`);
   }
 
-  if (typeof insertions !== 'object') {
+  if (typeof insertions !== 'object' || insertions === null || Array.isArray(insertions)) {
     throw new TypeError(`${insertions} is not an Object`);
   }
 
