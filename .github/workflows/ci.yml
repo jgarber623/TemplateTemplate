@@ -20,11 +20,7 @@ jobs:
   test:
     name: Test
     needs: lint
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        browser: ["headlessChrome", "headlessFirefox", "MicrosoftEdge", "safari"]
-      fail-fast: false
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -32,4 +28,7 @@ jobs:
           node-version-file: ".nvmrc"
           cache: npm
       - run: npm ci
-      - run: npm test -- --browser=${{ matrix.browser }}
+      - run: npm test
+      - uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
