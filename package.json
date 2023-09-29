@@ -32,7 +32,9 @@
   "repository": "github:jgarber623/TemplateTemplate",
   "scripts": {
     "build": "rollup --config",
+    "clean": "rm -rf coverage dist",
     "lint": "eslint .",
+    "prebuild": "npm run clean",
     "pretest": "npm run build",
     "start": "concurrently --kill-others-on-fail --prefix-colors yellow,blue 'npm:start:*'",
     "start:build": "npm run build -- --watch",
