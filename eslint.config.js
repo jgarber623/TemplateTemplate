@@ -1,6 +1,8 @@
 const config = require('@jgarber/eslint-config');
 const globals = require('globals');
 
+const pluginAva = require('eslint-plugin-ava');
+
 module.exports = [
   ...config,
   {
@@ -9,16 +11,21 @@ module.exports = [
   {
     files: ['src/**/*.?(m)js'],
     languageOptions: {
-      globals: globals.browser
+      globals: {
+        ...globals.browser
+      }
     }
   },
   {
-    files: ['spec/**/*[sS]pec.?(m)js'],
+    files: ['test/**/*.?(m)js'],
     languageOptions: {
       globals: {
-        ...globals.browser,
-        ...globals.jasmine
+        ...globals.browser
       }
-    }
+    },
+    plugins: {
+      ava: pluginAva
+    },
+    rules: pluginAva.configs.recommended.rules
   }
 ];
