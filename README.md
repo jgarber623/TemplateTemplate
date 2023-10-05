@@ -5,8 +5,6 @@
 [![npm](https://img.shields.io/npm/v/@jgarber/templatetemplate.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Build](https://img.shields.io/github/actions/workflow/status/jgarber623/TemplateTemplate/ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/jgarber623/TemplateTemplate/actions/workflows/ci.yml)
-[![Maintainability](https://img.shields.io/codeclimate/maintainability/jgarber623/TemplateTemplate.svg?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate)
-[![Coverage](https://img.shields.io/codeclimate/c/jgarber623/TemplateTemplate.svg?logo=code-climate&style=for-the-badge)](https://codeclimate.com/github/jgarber623/TemplateTemplate/code)
 
 ### Key Features
 
