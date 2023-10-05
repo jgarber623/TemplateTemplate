@@ -23,6 +23,7 @@
     "example/*",
     "src/*"
   ],
+  "type": "module",
   "main": "dist/templatetemplate.js",
   "browser": "dist/templatetemplate.min.js",
   "module": "dist/templatetemplate.mjs",
