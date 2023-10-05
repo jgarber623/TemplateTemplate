@@ -34,7 +34,7 @@ export default [
     input,
     output: {
       banner,
-      file: pkg.module,
+      file: pkg.exports.import,
       format: 'es'
     },
     plugins: [terser(terserConfig)]
@@ -43,9 +43,8 @@ export default [
     input,
     output: {
       banner,
-      file: pkg.main,
-      format: 'umd',
-      name
+      file: pkg.exports.require,
+      format: 'cjs'
     },
     plugins: [terser(terserConfig)]
   },
@@ -54,7 +53,7 @@ export default [
     output: {
       banner,
       file: pkg.browser,
-      format: 'umd',
+      format: 'iife',
       name
     },
     plugins: [terser()]

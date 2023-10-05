@@ -12,7 +12,7 @@
 
 - Uses established Web standards (e.g. `<template>`, `document.querySelector`)
 - Dependency-free
-- ESM/CommonJS/AMD module support
+- JavaScript module (ESM), CommonJS, and browser global (`window.TemplateTemplate`) support
 
 ## Getting TemplateTemplate
 
@@ -24,9 +24,36 @@ You've got a couple options for adding TemplateTemplate to your project:
 
 ## Usage
 
+If you're comfortable attaching TemplateTemplate to the browser's `window` object, you may do the following:
+
+```html
+<script src="./dist/templatetemplate.js"></script>
+<script>
+  // Verify everything loaded properly...
+  console.log(window.TemplateTemplate)
+</script>
+```
+
+Or, you may use the JavaScript module (ESM) version:
+
+```html
+<script type="module">
+  import TemplateTemplate from './dist/templatetemplate.mjs';
+
+  // Verify everything loaded properly...
+  console.log(TemplateTemplate);
+</script>
+```
+
+> [!NOTE]\
+> Full-featured examples of both of the above approaches are available in the [`example`](https://github.com/jgarber623/TemplateTemplate/blob/main/example) folder.
+
+> [!NOTE]\
+> If you're using an asset-bundling system (there are _so many_), refer to its documentation to determine which version of TemplateTemplate you should use (ESM, CommonJS, etc.).
+
 TemplateTemplate takes two arguments: a reference to a `<template>` element and an object of `insertions` defining the content to insert into the `<template>`.
 
-### Basic
+### Basic Example
 
 A basic example, inserting a row into a `<table>`:
 
@@ -53,18 +80,18 @@ A basic example, inserting a row into a `<table>`:
 </template>
 
 <script>
-  var tbody = document.querySelector('#projects tbody');
+  const tbody = document.querySelector('#projects tbody');
 
-  var emptyTemplate = document.querySelector('#row-template');
+  const emptyTemplate = document.querySelector('#row-template');
 
-  var insertions = {
+  const insertions = {
     '.name': 'TemplateTemplate',
     '.author': 'Jason Garber',
     '.url': 'https://github.com/jgarber623/TemplateTemplate',
     '.languages': 'JavaScript'
   };
 
-  var renderedTemplate = TemplateTemplate(emptyTemplate, insertions);
+  const renderedTemplate = TemplateTemplate(emptyTemplate, insertions);
 
   tbody.appendChild(renderedTemplate);
 </script>
@@ -72,7 +99,7 @@ A basic example, inserting a row into a `<table>`:
 
 In the example above, a reference to the `<template>` element is passed to TemplateTemplate using [`document.querySelector`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector). The `insertions` argument an object whose keys (e.g. `'.name'`) are valid [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) and whose values (e.g. `'TemplateTemplate'`) are strings of text to insert into the selected node.
 
-### Advanced
+### Advanced Example
 
 A more complex example, inserting a row into a `<table>` with different types of insertions.
 
@@ -103,9 +130,9 @@ A more complex example, inserting a row into a `<table>` with different types of
 </template>
 
 <script>
-  var tbody = document.querySelector('#projects tbody');
+  const tbody = document.querySelector('#projects tbody');
 
-  var anchor = document.createElement('a');
+  const anchor = document.createElement('a');
 
   anchor.setAttribute('href', 'https://sixtwothree.org');
   anchor.textContent = 'Jason Garber';
@@ -169,9 +196,9 @@ TemplateTemplate('#row-template', {
 })
 ```
 
-### Example
+### Examples
 
-For a full-featured TemplateTemplate demonstration, check out [the included example file](https://github.com/jgarber623/TemplateTemplate/blob/main/example/index.html).
+For a full-featured TemplateTemplate demonstration, check out [the included example files](https://github.com/jgarber623/TemplateTemplate/blob/main/example).
 
 ## Browser Support
 
