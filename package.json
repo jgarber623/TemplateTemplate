@@ -23,9 +23,12 @@
     "example/*",
     "src/*"
   ],
-  "main": "dist/templatetemplate.js",
-  "browser": "dist/templatetemplate.min.js",
-  "module": "dist/templatetemplate.mjs",
+  "type": "module",
+  "exports": {
+    "import": "./dist/templatetemplate.mjs",
+    "require": "./dist/templatetemplate.cjs"
+  },
+  "browser": "./dist/templatetemplate.js",
   "directories": {
     "example": "example"
   },

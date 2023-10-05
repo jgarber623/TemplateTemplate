@@ -4,7 +4,7 @@ import terser from '@rollup/plugin-terser';
 
 const pkg = JSON.parse(readFileSync('./package.json'));
 
-const input = './src/templatetemplate.mjs';
+const input = './src/TemplateTemplate.js';
 const name = 'TemplateTemplate';
 
 const banner = `/**

@@ -1,9 +1,9 @@
-const config = require('@jgarber/eslint-config');
-const globals = require('globals');
+import config from '@jgarber/eslint-config';
+import globals from 'globals';
 
-const pluginAva = require('eslint-plugin-ava');
+import pluginAva from 'eslint-plugin-ava';
 
-module.exports = [
+export default [
   ...config,
   {
     ignores: ['dist']
