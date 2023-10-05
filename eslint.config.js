@@ -1,31 +1,19 @@
+import ava from '@jgarber/eslint-config/ava';
 import config from '@jgarber/eslint-config';
 import globals from 'globals';
 
-import pluginAva from 'eslint-plugin-ava';
-
 export default [
-  ...config,
   {
-    ignores: ['dist']
+    ignores: ['coverage', 'dist']
   },
+  ...config,
+  ...ava,
   {
-    files: ['src/**/*.?(m)js'],
+    files: ['src/*.js', 'test/*.js'],
     languageOptions: {
       globals: {
         ...globals.browser
       }
     }
-  },
-  {
-    files: ['test/**/*.?(m)js'],
-    languageOptions: {
-      globals: {
-        ...globals.browser
-      }
-    },
-    plugins: {
-      ava: pluginAva
-    },
-    rules: pluginAva.configs.recommended.rules
   }
 ];
