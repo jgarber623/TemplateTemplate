@@ -1,9 +1,15 @@
 /**
- * @param {(string|HTMLTemplateElement)} template
- * @param {object} insertions
+ * @param {(HTMLTemplateElement|string)} template An HTML `<template>` element
+ *     or a string representing a valid CSS selector referencing an HTML
+ *     `<template>` element.
+ * @param {object} insertions An object whose keys are strings representing
+ *    valid CSS selectors and whose values are strings, arrays, or instances of
+ *    TemplateTemplate.
  *
- * @throws {TypeError} Argument template must be a string or an HTMLTemplateElement.
- * @throws {TypeError} Argument insertions must be an Object.
+ * @throws {TypeError} Argument must be a string or an HTMLTemplateElement.
+ * @throws {TypeError} Argument must be an object.
+ *
+ * @returns {DocumentFragment} The rendered HTMLTemplateElement.
  */
 export default function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
