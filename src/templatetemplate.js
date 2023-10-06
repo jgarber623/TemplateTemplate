@@ -32,7 +32,7 @@ export default function TemplateTemplate(template, insertions = {}) {
     }
 
     if (insertion instanceof DocumentFragment || insertion instanceof HTMLElement) {
-      currentNode.appendChild(insertion);
+      currentNode.append(insertion);
     } else if (insertion !== null) {
       currentNode.textContent = insertion;
     }
