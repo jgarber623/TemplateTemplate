@@ -112,7 +112,7 @@ test('when `insertions` argument includes a TemplateTemplate value', t => {
   template.id = 'templ2';
   template.innerHTML = '<b></b>';
 
-  document.body.appendChild(template);
+  document.body.append(template);
 
   const insertions = { a: TemplateTemplate('#templ2', { b: ['foo', { class: 'bar' }] }) };
   const renderedTemplate = TemplateTemplate('#templ', insertions);
