@@ -17,9 +17,9 @@ const html = `
 test.before(() => {
   const { window } = new JSDOM(html);
 
-  const { document, DocumentFragment, HTMLElement, HTMLTemplateElement } = window;
+  const { DocumentFragment, HTMLElement, HTMLTemplateElement, document } = window;
 
-  Object.assign(globalThis, { window, document, DocumentFragment, HTMLElement, HTMLTemplateElement });
+  Object.assign(globalThis, { DocumentFragment, HTMLElement, HTMLTemplateElement, document, window });
 });
 
 test('is a function', t => {
