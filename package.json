@@ -38,7 +38,6 @@
     "clean": "rm -rf coverage dist",
     "lint": "eslint .",
     "prebuild": "npm run clean",
-    "pretest": "npm run build",
     "start": "concurrently --kill-others-on-fail --prefix-colors yellow,blue 'npm:start:*'",
     "start:build": "npm run build -- --watch",
     "start:serve": "http-server .",
