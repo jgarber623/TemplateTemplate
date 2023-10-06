@@ -21,11 +21,14 @@ jobs:
     name: Test
     needs: lint
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [18, 20]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version: ${{ matrix.version }}
           cache: npm
       - run: npm ci
       - run: npm test
