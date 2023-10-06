@@ -1,9 +1,15 @@
 /**
- * @param {(string|HTMLTemplateElement)} template
- * @param {Object} insertions
+ * @param {(HTMLTemplateElement|string)} template An HTML `<template>` element
+ *     or a string representing a valid CSS selector referencing an HTML
+ *     `<template>` element.
+ * @param {object} insertions An object whose keys are strings representing
+ *    valid CSS selectors and whose values are strings, arrays, or instances of
+ *    TemplateTemplate.
  *
- * @throws {TypeError} Argument template must be a string or an HTMLTemplateElement.
- * @throws {TypeError} Argument insertions must be an Object.
+ * @throws {TypeError} Argument must be a string or an HTMLTemplateElement.
+ * @throws {TypeError} Argument must be an object.
+ *
+ * @returns {DocumentFragment} The rendered HTMLTemplateElement.
  */
 export default function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
@@ -18,27 +24,25 @@ export default function TemplateTemplate(template, insertions = {}) {
 
   const importedNode = document.importNode(template.content, true);
 
-  Object.entries(insertions).forEach(([selector, insertion]) => {
+  for (let [selector, insertion] of Object.entries(insertions)) {
     const currentNode = importedNode.querySelector(selector);
 
     if (Array.isArray(insertion)) {
       const [textContent, attributes] = insertion;
 
-      Object.entries(attributes).forEach(([name, value]) => {
-        return currentNode.setAttribute(name, value);
-      });
+      for (const [name, value] of Object.entries(attributes)) {
+        currentNode.setAttribute(name, value);
+      }
 
       insertion = textContent;
     }
 
     if (insertion instanceof DocumentFragment || insertion instanceof HTMLElement) {
-      return currentNode.appendChild(insertion);
-    }
-
-    if (insertion !== null) {
+      currentNode.append(insertion);
+    } else if (insertion !== null) {
       currentNode.textContent = insertion;
     }
-  });
+  }
 
   return importedNode;
 }

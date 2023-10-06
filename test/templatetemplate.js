@@ -1,7 +1,7 @@
 import test from 'ava';
 import { JSDOM } from 'jsdom';
 
-import TemplateTemplate from '@jgarber/templatetemplate';
+import TemplateTemplate from '../src/templatetemplate.js';
 
 const html = `
   <!doctype html>
@@ -17,9 +17,9 @@ const html = `
 test.before(() => {
   const { window } = new JSDOM(html);
 
-  const { document, DocumentFragment, HTMLElement, HTMLTemplateElement } = window;
+  const { DocumentFragment, HTMLElement, HTMLTemplateElement, document } = window;
 
-  Object.assign(globalThis, { window, document, DocumentFragment, HTMLElement, HTMLTemplateElement });
+  Object.assign(globalThis, { DocumentFragment, HTMLElement, HTMLTemplateElement, document, window });
 });
 
 test('is a function', t => {
@@ -112,7 +112,7 @@ test('when `insertions` argument includes a TemplateTemplate value', t => {
   template.id = 'templ2';
   template.innerHTML = '<b></b>';
 
-  document.body.appendChild(template);
+  document.body.append(template);
 
   const insertions = { a: TemplateTemplate('#templ2', { b: ['foo', { class: 'bar' }] }) };
   const renderedTemplate = TemplateTemplate('#templ', insertions);
