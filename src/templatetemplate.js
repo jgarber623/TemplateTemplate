@@ -1,6 +1,6 @@
 /**
  * @param {(string|HTMLTemplateElement)} template
- * @param {Object} insertions
+ * @param {object} insertions
  *
  * @throws {TypeError} Argument template must be a string or an HTMLTemplateElement.
  * @throws {TypeError} Argument insertions must be an Object.
