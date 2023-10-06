@@ -1,7 +1,7 @@
 import test from 'ava';
 import { JSDOM } from 'jsdom';
 
-import TemplateTemplate from '@jgarber/templatetemplate';
+import TemplateTemplate from '../src/templatetemplate.js';
 
 const html = `
   <!doctype html>
