@@ -1,5 +1,5 @@
-import test from 'ava';
 import { JSDOM } from 'jsdom';
+import test from 'ava';
 
 import TemplateTemplate from '../src/templatetemplate.js';
 
@@ -17,9 +17,9 @@ const html = `
 test.before(() => {
   const { window } = new JSDOM(html);
 
-  const { DocumentFragment, HTMLElement, HTMLTemplateElement, document } = window;
+  const { document, DocumentFragment, HTMLElement, HTMLTemplateElement } = window;
 
-  Object.assign(globalThis, { DocumentFragment, HTMLElement, HTMLTemplateElement, document, window });
+  Object.assign(globalThis, { document, DocumentFragment, HTMLElement, HTMLTemplateElement, window });
 });
 
 test('is a function', t => {
