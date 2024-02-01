@@ -51,7 +51,7 @@
     "concurrently": "^8.2.2",
     "globals": "^13.24.0",
     "http-server": "^14.1.1",
-    "jsdom": "^23.2.0",
+    "jsdom": "^24.0.0",
     "rollup": "^4.9.4"
   },
   "engines": {
