@@ -6,10 +6,10 @@
  *    valid CSS selectors and whose values are strings, arrays, or instances of
  *    TemplateTemplate.
  *
+ * @returns {DocumentFragment} The rendered HTMLTemplateElement.
+ *
  * @throws {TypeError} Argument must be a string or an HTMLTemplateElement.
  * @throws {TypeError} Argument must be an object.
- *
- * @returns {DocumentFragment} The rendered HTMLTemplateElement.
  */
 export default function TemplateTemplate(template, insertions = {}) {
   template = template instanceof HTMLElement ? template : document.querySelector(template);
@@ -18,7 +18,7 @@ export default function TemplateTemplate(template, insertions = {}) {
     throw new TypeError(`${template} is not an HTMLTemplateElement`);
   }
 
-  if (typeof insertions !== 'object' || insertions === null || Array.isArray(insertions)) {
+  if (typeof insertions !== "object" || insertions === null || Array.isArray(insertions)) {
     throw new TypeError(`${insertions} is not an Object`);
   }
 
