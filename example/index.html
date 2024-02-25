@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>TemplateTemplate: Examples</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
@@ -92,38 +91,38 @@
   </template>
 
   <script type="module">
-    import TemplateTemplate from '../dist/templatetemplate.mjs';
+    import TemplateTemplate from "../src/templatetemplate.js";
 
-    const tbody = document.querySelector('#projects tbody');
+    const tbody = document.querySelector("#projects tbody");
 
     tbody.appendChild(
-      TemplateTemplate(document.querySelector('#row-template'), {
-        '.name': 'TemplateTemplate',
-        '.author': 'Jason Garber',
-        '.url': 'https://github.com/jgarber623/TemplateTemplate',
-        '.languages': 'JavaScript'
-      })
+      TemplateTemplate(document.querySelector("#row-template"), {
+        ".name": "TemplateTemplate",
+        ".author": "Jason Garber",
+        ".url": "https://github.com/jgarber623/TemplateTemplate",
+        ".languages": "JavaScript",
+      }),
     );
 
-    let anchor = document.createElement('a');
+    let anchor = document.createElement("a");
 
-    anchor.setAttribute('href', 'https://sixtwothree.org');
-    anchor.textContent = 'Jason Garber';
+    anchor.setAttribute("href", "https://sixtwothree.org");
+    anchor.textContent = "Jason Garber";
 
     tbody.appendChild(
-      TemplateTemplate('#row-template', {
-        'th': 'CashCash',
-        'th + td': anchor,
-        '.url': ['https://github.com/jgarber623/CashCash', {
-          'style': 'font-style: italic;'
+      TemplateTemplate("#row-template", {
+        "th": "CashCash",
+        "th + td": anchor,
+        ".url": ["https://github.com/jgarber623/CashCash", {
+          "style": "font-style: italic;"
         }],
-        'td:last-child': TemplateTemplate('#anchor-template', {
-          'a': ['JavaScript', {
-            'href': 'https://github.com/search?q=language%3AJavaScript',
-            'target': '_blank'
-          }]
-        })
-      })
+        "td:last-child": TemplateTemplate("#anchor-template", {
+          "a": ["JavaScript", {
+            "href": "https://github.com/search?q=language%3AJavaScript",
+            "target": "_blank",
+          }],
+        }),
+      }),
     );
   </script>
 

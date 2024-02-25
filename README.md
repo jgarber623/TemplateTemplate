@@ -196,7 +196,7 @@ TemplateTemplate('#row-template', {
 
 ### Examples
 
-For a full-featured TemplateTemplate demonstration, check out [the included example files](https://github.com/jgarber623/TemplateTemplate/blob/main/example).
+For a full-featured TemplateTemplate demonstration, check out [the demo page](https://jgarber623.github.io/TemplateTemplate/example/) and [the example file](https://github.com/jgarber623/TemplateTemplate/blob/main/example/index.html).
 
 ## Browser Support
 
