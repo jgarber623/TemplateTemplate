@@ -36,7 +36,7 @@ Or, you may use the JavaScript module (ESM) version:
 
 ```html
 <script type="module">
-  import TemplateTemplate from './dist/templatetemplate.mjs';
+  import TemplateTemplate from "./dist/templatetemplate.mjs";
 
   // Verify everything loaded properly...
   console.log(TemplateTemplate);
@@ -44,7 +44,7 @@ Or, you may use the JavaScript module (ESM) version:
 ```
 
 > [!NOTE]\
-> Full-featured examples of both of the above approaches are available in the [`example`](https://github.com/jgarber623/TemplateTemplate/blob/main/example) folder.
+> Full-featured examples of both of the above approaches are available in the [`example`](https://github.com/jgarber623/TemplateTemplate/tree/main/example) folder.
 
 > [!NOTE]\
 > If you're using an asset-bundling system (there are _so many_), refer to its documentation to determine which version of TemplateTemplate you should use (ESM, CommonJS, etc.).
@@ -78,15 +78,15 @@ A basic example, inserting a row into a `<table>`:
 </template>
 
 <script>
-  const tbody = document.querySelector('#projects tbody');
+  const tbody = document.querySelector("#projects tbody");
 
-  const emptyTemplate = document.querySelector('#row-template');
+  const emptyTemplate = document.querySelector("#row-template");
 
   const insertions = {
-    '.name': 'TemplateTemplate',
-    '.author': 'Jason Garber',
-    '.url': 'https://github.com/jgarber623/TemplateTemplate',
-    '.languages': 'JavaScript'
+    ".name": "TemplateTemplate",
+    ".author": "Jason Garber",
+    ".url": "https://github.com/jgarber623/TemplateTemplate",
+    ".languages": "JavaScript",
   };
 
   const renderedTemplate = TemplateTemplate(emptyTemplate, insertions);
@@ -128,31 +128,31 @@ A more complex example, inserting a row into a `<table>` with different types of
 </template>
 
 <script>
-  const tbody = document.querySelector('#projects tbody');
+  const tbody = document.querySelector("#projects tbody");
 
-  const anchor = document.createElement('a');
+  const anchor = document.createElement("a");
 
-  anchor.setAttribute('href', 'https://sixtwothree.org');
-  anchor.textContent = 'Jason Garber';
+  anchor.setAttribute("href", "https://sixtwothree.org");
+  anchor.textContent = "Jason Garber";
 
   tbody.appendChild(
-    TemplateTemplate('#row-template', {
-      tr: [null, {
-        class: 'project',
-        id: 'project-cashcash'
+    TemplateTemplate("#row-template", {
+      "tr": [null, {
+        "class": "project",
+        "id": "project-cashcash",
       }],
-      th: 'CashCash',
-      'th + td': anchor,
-      '.url': ['https://github.com/jgarber623/CashCash', {
-        style: 'font-style: italic;'
+      "th": "CashCash",
+      "th + td": anchor,
+      ".url": ["https://github.com/jgarber623/CashCash", {
+        "style": "font-style: italic;",
       }],
-      'td:last-child': TemplateTemplate('#anchor-template', {
-        a: ['JavaScript', {
-          href: 'https://github.com/search?q=language%3AJavaScript',
-          target: '_blank'
-        }]
-      })
-    })
+      "td:last-child": TemplateTemplate("#anchor-template", {
+        "a": ["JavaScript", {
+          "href": "https://github.com/search?q=language%3AJavaScript",
+          "target": "_blank",
+        }],
+      }),
+    }),
   );
 </script>
 ```
@@ -161,36 +161,36 @@ The example above demonstrates a handful of additional features that you may fin
 
 ```js
 // The first argument to TemplateTemplate may also be a valid CSS selector.
-TemplateTemplate('#row-template', {
+TemplateTemplate("#row-template", {
   // When an array is passed as a value, TemplateTemplate will use the first
   // index in the array as the `textContent` for the node. If this value is
   // `null`, TemplateTemplate skips setting the node's `textContent`.
   //
   // The second index is an object whose properties are added to the node as
   // HTML attributes.
-  tr: [null, {
-    class: 'project',
-    id: 'project-cashcash'
+  "tr": [null, {
+    "class": 'project',
+    "id": 'project-cashcash',
   }],
 
-  th: 'CashCash',
+  "th": 'CashCash',
 
   // TemplateTemplate will use `appendChild` when given an instance of a
   // `DocumentFragment` or an `HTMLElement`.
-  'th + td': anchor,
+  "th + td": anchor,
 
-  '.url': ['https://github.com/jgarber623/CashCash', {
-    style: 'font-weight: bold;'
+  ".url": ["https://github.com/jgarber623/CashCash", {
+    "style": "font-weight: bold;",
   }],
 
   // TemplateTemplate may also be used to generate content from another
   // `<template>` and reuse it on the fly!
-  'td:last-child': TemplateTemplate('#anchor-template', {
-    a: ['JavaScript', {
-      href: 'https://github.com/search?q=language%3AJavaScript',
-      target: '_blank'
-    }]
-  })
+  "td:last-child": TemplateTemplate("#anchor-template", {
+    "a": ["JavaScript", {
+      "href": "https://github.com/search?q=language%3AJavaScript",
+      "target": "_blank",
+    }],
+  }),
 })
 ```
 
