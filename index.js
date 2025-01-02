@@ -1,15 +1,3 @@
-/*!
- * @name TemplateTemplate
- * @version 3.0.0
- *
- * @file A very small JavaScript <template> manipulation library.
- *
- * {@link https://github.com/jgarber623/TemplateTemplate}
- *
- * @copyright 2018 Jason Garber (https://sixtwothree.org)
- * @license MIT
- */
-
 /**
  * @param {(HTMLTemplateElement|string)} template An HTML `<template>` element
  *     or a string representing a valid CSS selector referencing an HTML
