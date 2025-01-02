@@ -91,30 +91,25 @@
   </template>
 
   <script type="module">
-    import TemplateTemplate from "../src/templatetemplate.js";
+    import TemplateTemplate from "../index.js";
 
-    const tbody = document.querySelector("#projects tbody");
+    const anchor = document.createElement("a");
 
-    tbody.appendChild(
+    anchor.href = "https://sixtwothree.org";
+    anchor.textContent = "Jason Garber";
+
+    document.querySelector("#projects tbody").append(
       TemplateTemplate(document.querySelector("#row-template"), {
         ".name": "TemplateTemplate",
         ".author": "Jason Garber",
         ".url": "https://github.com/jgarber623/TemplateTemplate",
         ".languages": "JavaScript",
       }),
-    );
-
-    let anchor = document.createElement("a");
-
-    anchor.setAttribute("href", "https://sixtwothree.org");
-    anchor.textContent = "Jason Garber";
-
-    tbody.appendChild(
       TemplateTemplate("#row-template", {
         "th": "CashCash",
         "th + td": anchor,
         ".url": ["https://github.com/jgarber623/CashCash", {
-          "style": "font-style: italic;"
+          "style": "font-style: italic;",
         }],
         "td:last-child": TemplateTemplate("#anchor-template", {
           "a": ["JavaScript", {
@@ -122,7 +117,7 @@
             "target": "_blank",
           }],
         }),
-      }),
+      })
     );
   </script>
 

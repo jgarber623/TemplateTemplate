@@ -6,11 +6,14 @@
 [![Downloads](https://img.shields.io/npm/dt/@jgarber/templatetemplate.svg?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@jgarber/templatetemplate)
 [![Build](https://img.shields.io/github/actions/workflow/status/jgarber623/TemplateTemplate/ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/jgarber623/TemplateTemplate/actions/workflows/ci.yml)
 
+> [!NOTE]
+> TemplateTemplate is feature complete and will only be updated to address bugs or security issues.
+
 ### Key Features
 
 - Uses established Web standards (e.g. `<template>`, `document.querySelector`)
 - Dependency-free
-- JavaScript module (ESM), CommonJS, and browser global (`window.TemplateTemplate`) support
+- JavaScript module (ESM)
 
 ## Getting TemplateTemplate
 
@@ -21,33 +24,6 @@ You've got a couple options for adding TemplateTemplate to your project:
 - Install using [Yarn](https://yarnpkg.com/en/package/@jgarber/templatetemplate): `yarn add @jgarber/templatetemplate`
 
 ## Usage
-
-If you're comfortable attaching TemplateTemplate to the browser's `window` object, you may do the following:
-
-```html
-<script src="./dist/templatetemplate.js"></script>
-<script>
-  // Verify everything loaded properly...
-  console.log(window.TemplateTemplate)
-</script>
-```
-
-Or, you may use the JavaScript module (ESM) version:
-
-```html
-<script type="module">
-  import TemplateTemplate from "./dist/templatetemplate.mjs";
-
-  // Verify everything loaded properly...
-  console.log(TemplateTemplate);
-</script>
-```
-
-> [!NOTE]\
-> Full-featured examples of both of the above approaches are available in the [`example`](https://github.com/jgarber623/TemplateTemplate/tree/main/example) folder.
-
-> [!NOTE]\
-> If you're using an asset-bundling system (there are _so many_), refer to its documentation to determine which version of TemplateTemplate you should use (ESM, CommonJS, etc.).
 
 TemplateTemplate takes two arguments: a reference to a `<template>` element and an object of `insertions` defining the content to insert into the `<template>`.
 
@@ -77,7 +53,9 @@ A basic example, inserting a row into a `<table>`:
   </tr>
 </template>
 
-<script>
+<script type="module">
+  import TemplateTemplate from "@jgarber/templatetemplate";
+
   const tbody = document.querySelector("#projects tbody");
 
   const emptyTemplate = document.querySelector("#row-template");
@@ -127,7 +105,9 @@ A more complex example, inserting a row into a `<table>` with different types of
   <a></a>
 </template>
 
-<script>
+<script type="module">
+  import TemplateTemplate from "@jgarber/templatetemplate";
+
   const tbody = document.querySelector("#projects tbody");
 
   const anchor = document.createElement("a");

@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { JSDOM } from "jsdom";
 
-import TemplateTemplate from "../src/templatetemplate.js";
+import TemplateTemplate from "./index.js";
 
 const html = `\
   <!doctype html>
