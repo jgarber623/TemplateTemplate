@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { JSDOM } from "jsdom";
 
-import TemplateTemplate from "./index.js";
+import TemplateTemplate from "@jgarber/templatetemplate";
 
 const html = `\
   <!doctype html>
