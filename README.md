@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This project has moved to [codeberg.org/jgarber/TemplateTemplate](https://codeberg.org/jgarber/TemplateTemplate).
+
 # TemplateTemplate
 
 **A very small JavaScript `<template>` manipulation library.**
